@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
   <link rel="stylesheet" href="styles.css" />
+  <script type="text/javascript" src="js/script.js"></script>
   <title>Fuji Imports</title>
 </head>
 
@@ -18,13 +19,15 @@
   <section>
     <img src="img/CherryBlossom.png" id="CherryBlossom">
     <img src="img/leaves.png" id="leaves">
-    <img src="img/gate.png" id="gate">
+    <img src="" id="gate">
     <img src="img/Mountain.png" id="mountain">
     <img src="img/Sun.png" id="sun">
-    <img src="img/BlueHorizon.png" id="horizon">
     <img src="img/c1cff3.png" id="backdrop">
+
+
     <h2 id="text">Fuji<br />Imports</h2>
-    <a href="#" id="btn"><h5>View Garage</h5></a>
+
+    <a href="#" id="btn"><h5>View Stock</h5></a>
   </section>
   <div class="bottom">
     <h2>Japanese Imports</h2>
@@ -39,4 +42,28 @@
       ligula tortor. Mauris dapibus suscipit scelerisque.
     </p>
   </div>
+  <script>
+    const cherry = document.getElementById('CherryBlossom');
+    const leaves = document.getElementById('leaves');
+    const mountain = document.getElementById('mountain');
+    const sun = document.getElementById('sun');
+    const horizon = document.getElementById('horizon');
+    const backdrop = document.getElementById('backdrop');
+
+    const text = document.getElementById('text');
+    const btn = document.getElementById('btn');
+
+    window.addEventListener('scroll', function () {
+        let scrollDistance = window.scrollY;
+        leaves.style.top = scrollDistance * .4 +'px';
+        sun.style.top = scrollDistance * 1.65+ 'px';
+        sun.style.width = 100 + -scrollDistance / 5+ '%';
+        sun.style.left = scrollDistance * 3 +'px'
+        mountain.style.width = 100 + scrollDistance / 45 + '%';
+        mountain.style.left = scrollDistance * -0.22 +'px';
+        text.style.top = 305 + scrollDistance * 0.1 + 'px';
+        btn.style.top = 450 + scrollDistance * 1 + 'px';
+
+    });
+  </script>
 </body>

@@ -1,8 +1,11 @@
 @font-face {
     font-family: 'orientalregular';
-    src: url('./font/LaOriental.otf');
+    src: url('./font/LaOriental.otf') format("opentype");
+}
 
-
+@font-face {
+    font-family: 'advantage';
+    src: url('./font/Advantage.ttf');
 }
 
 * {
@@ -16,8 +19,8 @@
 
 body {
     overflow-x: hidden;
-    background: #c1cff3;
     min-height: 100vh;
+    background: #133a85;
 }
 
 #header {
@@ -30,15 +33,18 @@ body {
     justify-content:space-between;
     align-items: center;
     margin-bottom: 40px;
+    background: #c1cff3;
 }
 
 #header .logo {
     color: #fff;
-    font-weight: 700;
+    font-weight: 100;
     font-size: 2em;
+    margin-top: 4px;
     text-decoration: none;
-    font-family: 'orientalregular';
+    font-family: 'advantage';
     letter-spacing:4px;
+    text-shadow: .75px 1.75px #3b3b3b;
 }
 
 #header ul {
@@ -51,7 +57,7 @@ body {
     margin-left: 2em;
     list-style: none;
     font-weight: bold;
-    transform:translateY(25%)
+    
 }
 
 #header ul li a{
@@ -73,27 +79,31 @@ body {
 }
 
 section {
-    margin-top: 100px;
+    margin-top: 5em;
     position: relative;
     width: 100%;
     min-height: 100vh;
     display:flex;
     justify-content: center;
     align-items: center;
-    pointer-events: none
+    pointer-events: none;
+    background: #c1cff3;
 }
 
 section #text {
     position:absolute;
     color:black;
     text-align:center;
-    font-size:6em;
+    top:305px;
+    font-size:5em;
     pointer-events: none;
-    font-family:'orientalregular';
-    letter-spacing: 4px;
-    pointer-events: none;
+    font-family:'advantage';
+    letter-spacing: 10px;
+    font-weight: 100;
     z-index: 1000;
+    text-shadow: 1px 2px #b32323;
 }
+
 
 section img {
     position:absolute;
@@ -104,6 +114,8 @@ section img {
     object-fit:cover;
     pointer-events: none;
 }
+
+
 
 #backdrop {
     z-index: -1;
@@ -125,10 +137,19 @@ section img {
     z-index: 25;
 }
 
-#gate {
+#horizon {
     z-index: 9;
 }
 
+#logoName {
+    z-index: 1000;
+    width:500px;
+}
+
+#gate {
+    z-index: 9;
+    left: 15px;
+}
 
 #btn {
     text-decoration: none;
@@ -137,14 +158,14 @@ section img {
     border-radius: 40px;
     background-color: #b32323;
     letter-spacing: 1px;
-    transform: translateY(150px);
+    transform: translateY(50px);
     z-index: 999;
 }
 
 #btn h5 {
     color:white;
 }
- 
+
 
 #btn a:hover {
     color: rgb(46, 80, 131);
@@ -156,6 +177,7 @@ section img {
     position: relative;
     padding: 100px;
     background: #133a85;
+    z-index: 1000;
 }
 
 .bottom h2 {
